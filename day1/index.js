@@ -60,4 +60,9 @@ console.log("Giá gốc của sản phẩm :",price);
 // Bai8:
 let a1 = 3;
 let b1= 2;
-console.log("b1 =", a1 , "a1 =", b1)
+console.log("Trước khi hoán vị :", "a1 =", a1 , "b1 =", b1);
+a1 = a1 + b1;
+b1 = a1 - b1;
+a1 = a1 - b1;
+
+console.log("Sau khi hoán vị :" , "a1 =", a1 , "b1 =" ,b1);

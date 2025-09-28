@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+}
+
+h2{
+    text-align: center;
+    margin: 20px ;
+}
+
+table{
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td {
+  width: 80px;
+  height: 80px;
+  border: 1px solid black;
+}
+
+.square_black {
+  background-color: #333;
+}
+
+.square_white {
+  background-color: #fff;
+}

@@ -1,0 +1,14 @@
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+    }
+    .highlight {
+      background: yellow;
+      font-weight: bold;
+    }
+    .result-box {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 10px;
+    }

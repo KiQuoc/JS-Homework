@@ -123,8 +123,8 @@ for( let i = 0; i < numberS.length ; i ++){
         break;
     }
 }
-// if (!inserted) {
-//   numberS.splice(numbers.length, 0, newNumber) ;
-// }
+if (!inserted) {
+  numberS.splice(numbers.length, 0, newNumber) ;
+}
 
 console.log(numberS);

@@ -270,3 +270,18 @@ const increasedScores = scores.map(function(student){
     })
 })
 console.log(increasedScores);
+
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const size = 2;
+// [[1,2], [3,4], [5,6], [7,8], [9]]
+
+let result = numbers.reduce(function(acc, cur, index){
+    if (index % size=== 0){
+        const chunk = numbers.slice(index, index + size);
+        acc.push(chunk);
+    }
+    return acc;
+},[])
+
+console.log(result);

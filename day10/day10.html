@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="bg-[#8758ff] min-h-screen flex justify-center items-start pt-20 ">
+    <div class="bg-[#1a1a40] py-8 px-8 w-[442px] rounded-md shadow-lg">
+        <div>
+            <h1 class="text-white text-center text-[28px] font-bold mb-2">Get Things Done!</h1>
+            <div class="flex justify-center">
+                <input 
+                class="w-[300px] h-[37.6px] border-[0.8px] mt-4 mb-8 border-[#8758ff] placeholder:text-[#5f5e6f] px-4 py-2 outline-none text-white focus:border-purple-400 "
+                type="text" 
+                placeholder="What is the task today ?"
+                >
+                <button 
+                    id="addBtn"
+                    class="bg-[#8758ff] w-[78.21px] h-[37.6px] text-white px-2 py-2 text-[13.33px] mt-4 mb-8 hover:bg-purple-600 cursor-pointer" >
+                    Add Task
+                </button>
+            </div>
+        </div>
+        <ul id="listEl" class="mt-5 space-y-3 text-white">
+            <!-- <li class="bg-[#8758ff] text-white px-4 py-3 rounded-[4px] mb-4 flex justify-between items-center">
+                <div id= "textCreate" class="textCreate">
+                </div>
+                <div class="flex">
+                    <button id ="editBtn"class="mr-3"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button id="deleteBtn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+    <script src="./day10.js"></script>
+</body>
+</html>

@@ -61,10 +61,15 @@ addBtn.addEventListener("click",()=>{
 
         addEditBtn.addEventListener("click", () => {
             const newValue = inputEdit.value.trim();
-            if (!newValue) return alert("Vui lòng nhập dữ liệu!");
+            if (!newValue) {
+                alert("Vui lòng nhập dữ liệu!")
+                return 
+            };
             const exist = task.some(t => t.toLowerCase() === newValue.toLowerCase());
-            if (exist) return alert("Task đã tồn tại!");
-
+            if (exist) {
+                 alert("Dữ liệu đã tồn tại!")
+                 return
+            };
 
             liEl.innerHTML = "";
             textDiv.textContent = newValue;

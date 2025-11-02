@@ -147,3 +147,14 @@ inputItem.addEventListener("click", (e) => {
 });
    
 
+document.addEventListener("keydown", (e) => {
+    const selected = document.querySelector("ul li.select");
+    if(e.key === "Escape"){
+        contextMenu.style.display = "none";
+        box.style.display = "none";
+        if(selected){
+            selected.classList.remove("select");
+        }
+        return;
+    }
+})

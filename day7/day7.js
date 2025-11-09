@@ -221,3 +221,124 @@ console.log( teamStats);
 
 // BÀi 7 :
 
+const groupByProject = (emp) => {
+  const result = {};
+
+  emp.forEach(employees => {
+    employees.projects.forEach(project => {
+      if (!result[project]) {
+        result[project] = [];
+      }
+      result[project].push(emp.name); 
+    });
+  });
+
+  return result;
+};
+
+const grouped = groupByProject(emp);
+console.log(grouped);
+
+const staffProject = () => {
+  const grouped = groupByProject();
+  return Object.entries(grouped).reduce((max, [proj, emps]) => 
+    emps.length > max[1].length ? [proj, emps] : max
+  );
+};
+
+// Bài 8:
+// 8.1
+const getAverageRatings = (reviews) => {
+  const grouped = {};
+
+  reviews.forEach(review => {
+    if (!grouped[review.productId]) {
+      grouped[review.productId] = [];
+    }
+    grouped[review.productId].push(review.rating);
+  });
+
+  const averages = {};
+  for (const productId in grouped) {
+    const ratings = grouped[productId];
+    const avg = ratings.reduce((sum, r) => sum + r, 0) / ratings.length;
+    averages[productId] = avg;
+  }
+
+  return averages;
+};
+
+const averageRatings = getAverageRatings(reviews);
+console.log(averageRatings);
+
+// 8.2
+const findHighestRatedProduct = (averageRatings) => {
+  let maxProduct = null;
+  let maxAvg = 0;
+
+  for (const productId in averageRatings) {
+    if (averageRatings[productId] > maxAvg) {
+      maxAvg = averageRatings[productId];
+      maxProduct = productId;
+    }
+  }
+
+  return { productId: maxProduct, averageRating: maxAvg };
+};
+
+const highestRated = findHighestRatedProduct(averageRatings);
+console.log(highestRated);
+
+
+// 8.3
+const groupReviewsByProduct = (reviews) => {
+  return reviews.reduce((acc, review) => {
+    if (!acc[review.productId]) acc[review.productId] = [];
+    acc[review.productId].push({ userId: review.userId, rating: review.rating });
+    return acc;
+  }, {});
+};
+
+const groupedReviews = groupReviewsByProduct(reviews);
+console.log(groupedReviews);
+
+
+// Bài 9:
+const calculateBalances = (tr) => {
+  const balances = {};
+
+  transactions.forEach(tx => {
+    if (!balances[tx.account]) {
+      balances[tx.account] = 0;
+    }
+    if (tx.type === "deposit") {
+      balances[tx.account] += tx.amount;
+    } else if (tx.type === "withdraw") {
+      balances[tx.account] -= tx.amount;
+    }
+  });
+
+  return balances;
+};
+
+const balances = calculateBalances(tr);
+console.log(balances);
+
+
+// 9.2
+const findHighestBalanceAccount = (balances) => {
+  let maxAccount = null;
+  let maxBalance = -Infinity;
+
+  for (const account in balances) {
+    if (balances[account] > maxBalance) {
+      maxBalance = balances[account];
+      maxAccount = account;
+    }
+  }
+
+  return { account: maxAccount, balance: maxBalance };
+};
+
+const highestBalance = findHighestBalanceAccount(balances);
+console.log(highestBalance);

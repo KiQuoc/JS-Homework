@@ -127,4 +127,17 @@ const menus = [
 ];
 
 
-// Lú như con cú
+const getMenuTree = (menus, parentId = 0) => {
+  return menus
+    .filter(menu => menu.parent === parentId) 
+    .map(menu => {
+      const children = getMenuTree(menus, menu.id);
+      if (children.length) {
+        return { ...menu, children };
+      }
+      return { ...menu }; 
+    });
+};
+
+const nested = getMenuTree(menus);
+console.log(nested);

@@ -292,7 +292,7 @@ const deletePost = async (id) => {
       method: "DELETE",
     });
 
-    if (!res.ok) throw new Error("Delete failed");
+    if (!res.ok) throw new Error("Xóa thất bại !");
 
     const deletedPost = await res.json();
     console.log("Deleted:", deletedPost);
